@@ -107,17 +107,52 @@ overflow-x: auto;
       },
       methods: {
         createTriangle() {
+          // const totalLevels = 28; // 设定三角形的层数
+          // for (let i = 0; i < totalLevels; i++) {
+          //   const row = [];
+          //   for (let j = 0; j < i; j++) {
+          //     row.push({
+          //       color: this.getRandomColor()
+          //     });
+
+          //   }
+          //   this.levels.push(row);
+          // }
+
+
+
           const totalLevels = 28; // 设定三角形的层数
           for (let i = 0; i < totalLevels; i++) {
             const row = [];
-            for (let j = 0; j < i; j++) {
-              row.push({
-                color: this.getRandomColor()
-              });
+            if (i >= 7 && i <= 14) {
+              let j = 5;
+              for (j; j < i; j++) {
+                row.push({
+                  color: this.getRandomColor()
+                });
 
+              }
+            }
+            else if (i >= 14) {
+              let j = 11;
+              for (j; j < i; j++) {
+                row.push({
+                  color: this.getRandomColor()
+                });
+
+              }
+            }
+            else {
+              for (let j = 0; j < i; j++) {
+                row.push({
+                  color: this.getRandomColor()
+                });
+
+              }
             }
             this.levels.push(row);
           }
+
         },
 
         getRandomColor() {
